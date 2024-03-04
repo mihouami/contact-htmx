@@ -28,5 +28,19 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      // Add event listener to buttons
+      document.querySelectorAll("button").forEach(function (button) {
+        button.addEventListener("click", function () {
+          document
+            .getElementById("triggerElement")
+            .setAttribute(
+              "hx-trigger",
+              "click from:" + button.getAttribute("data-trigger")
+            );
+        });
+      });
+    </script>
   </body>
 </html>
