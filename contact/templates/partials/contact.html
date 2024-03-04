@@ -1,1 +1,10 @@
-<li>{{ contact.name }} - {{ contact.phone }}</li>
+<li class="my-1">
+  {{ contact.name }} - {{ contact.phone }} -
+  <button
+    hx-delete="{% url 'delete_contact' contact.id %}"
+    hx-on:delete="this.closest('li').remove()"
+    class="btn btn-outline-danger btn-sm my-1"
+  >
+    <i class="bi bi-trash-fill"></i>
+  </button>
+</li>
