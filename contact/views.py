@@ -1,8 +1,14 @@
 from django.shortcuts import render
 from .forms import ContactForm
 
-# Create your views here.
 def index(request):
     context={'form':ContactForm()}
     return render(request, 'index.html', context)
+
+
+def add_contact(request):
+    if request.method == 'POST':
+        pass
+    context={'form':ContactForm()}
+    return render(request, 'partials/form.html', context)
 

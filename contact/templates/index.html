@@ -1,6 +1,19 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1 class="mb-4 text-primary">Add Contact</h1>
-{{ form.as_p }}<!---->
+
+<div id="contact-forms">{% include 'partials/form.html' %}</div>
+
+<div class="my-4">
+  <button
+    type="submit"
+    class="btn btn-secondary me-2"
+    hx-get="{% url 'add_contact' %}"
+    hx-target="#contact-forms"
+    hx-swap="beforeend"
+  >
+    + add contact form
+  </button>
+</div>
 
 {% endblock %}
