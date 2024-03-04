@@ -1,4 +1,12 @@
-<form class="my-1">
+<form
+  method="POST"
+  hx-post="{% url 'add-contact' %}"
+  hx-target="#contact-list"
+  hx-swap="beforeend"
+  hx-on::after-request="this.remove()"
+  class="my-1"
+>
+  <!--hx-on::after-request="this.reset()"-->
   <div class="row">
     <div class="col-4 col-md-3">
       <label for="{{ fomr.name.id_for_label}}">{{ form.name.label}}</label>
@@ -9,7 +17,7 @@
       {{ form.phone }}
     </div>
     <div class="col-3 align-self-end">
-      <button class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success">Submit</button>
     </div>
   </div>
 </form>

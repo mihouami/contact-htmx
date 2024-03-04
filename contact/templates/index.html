@@ -2,18 +2,27 @@
 
 <h1 class="mb-4 text-primary">Add Contact</h1>
 
+<!--INITIAL FORM-->
 <div id="contact-forms">{% include 'partials/form.html' %}</div>
 
+<!--ADD NEW FORMS-->
 <div class="my-4">
   <button
-    type="submit"
+    type="button"
     class="btn btn-secondary me-2"
-    hx-get="{% url 'add_contact' %}"
+    hx-get="{% url 'add-contact' %}"
     hx-target="#contact-forms"
     hx-swap="beforeend"
   >
     + add contact form
   </button>
 </div>
+
+<!--CONTACTS LIST-->
+<ul id="contact-list">
+  {% for contact in contacts %}<!---->
+  {% include 'partials/contact.html' %}<!---->
+  {% endfor %}
+</ul>
 
 {% endblock %}
