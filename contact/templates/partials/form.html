@@ -16,5 +16,13 @@
       <label for="{{ fomr.phone.id_for_label}}">{{ form.phone.label}}</label>
       {{ form.phone }}
     </div>
+    <div class="col-3 align-self-end">
+      <button
+        class="btn btn-danger"
+        hx-on:click="this.closest('form').remove()"
+      >
+        Cancel
+      </button>
+    </div>
   </div>
 </form>
